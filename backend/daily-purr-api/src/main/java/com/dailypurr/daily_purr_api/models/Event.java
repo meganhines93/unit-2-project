@@ -17,7 +17,6 @@ public class Event {
     private int capacity;
     private String category;
     private String imageId;
-    nextId++;
 
     public Event(String title, LocalDate date, LocalTime time, String description, String price, int capacity, String category, String imageId) {
         this.id = nextId;
@@ -29,6 +28,7 @@ public class Event {
         this.capacity = capacity;
         this.category = category;
         this.imageId = imageId;
+        nextId++;
     }
 
     public int getId() {
