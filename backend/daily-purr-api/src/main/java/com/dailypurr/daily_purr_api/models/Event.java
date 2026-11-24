@@ -16,9 +16,9 @@ public class Event {
     private String price;
     private int capacity;
     private String category;
-    private String imageId;
+    private String imageURL;
 
-    public Event(String title, LocalDate date, LocalTime time, String description, String price, int capacity, String category, String imageId) {
+    public Event(String title, LocalDate date, LocalTime time, String description, String price, int capacity, String category, String imageURL) {
         this.id = nextId;
         this.title = title;
         this.date = date;
@@ -27,7 +27,7 @@ public class Event {
         this.price = price;
         this.capacity = capacity;
         this.category = category;
-        this.imageId = imageId;
+        this.imageURL = imageURL;
         nextId++;
     }
 
@@ -91,12 +91,12 @@ public class Event {
         this.category = category;
     }
 
-    public String getImageId() {
-        return imageId;
+    public String getImageURL() {
+        return imageURL;
     }
 
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     @Override
@@ -109,7 +109,7 @@ public class Event {
                 ", price='" + price + '\'' +
                 ", capacity=" + capacity +
                 ", category='" + category + '\'' +
-                ", imageId='" + imageId + '\'' +
+                ", imageURL='" + imageURL + '\'' +
                 '}';
     }
 
