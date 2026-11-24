@@ -18,7 +18,7 @@ public class Volunteer {
     private String days_available;
     private String time_available;
     private String experience;
-    private String additional_Information
+    private String additional_Information;
 
     public Volunteer(String first_name, String last_name, String email, String phone_number, String street_address, String city, String state, String zip_code, String days_available, String time_available, String experience, String additional_Information) {
         this.id = nextId;
