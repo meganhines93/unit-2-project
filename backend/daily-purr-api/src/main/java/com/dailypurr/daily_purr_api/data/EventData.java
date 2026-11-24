@@ -1,6 +1,5 @@
 package com.dailypurr.daily_purr_api.data;
 
-import com.dailypurr.daily_purr_api.models.Cat;
 import com.dailypurr.daily_purr_api.models.Event;
 
 import java.util.Collection;
