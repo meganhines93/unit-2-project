@@ -23,7 +23,7 @@ public class CatController {
     }
 
     @PostMapping("/add")
-    public String addNewCat(@RequestParam String name, int age, String color, String breed, List<String> personality, List<String> good_with, String description, String imageURL, boolean available, String gender, BigDecimal adoption_fee, String adoption_info) {
+    public String addNewCat(@RequestParam String name, int age, String color, String breed, @RequestParam("personality") List<String> personality, @RequestParam("good_with") List<String> good_with, String description, String imageURL, boolean available, String gender, BigDecimal adoption_fee, String adoption_info) {
         Cat newCat = new Cat(name, age, color, breed, personality, good_with, description, imageURL, available, gender, adoption_fee, adoption_info);
         CatData.addNew(newCat);
         return "New Cat has been added " + newCat;
