@@ -1,6 +1,8 @@
 package com.dailypurr.daily_purr_api.controllers;
 
+import com.dailypurr.daily_purr_api.data.CatData;
 import com.dailypurr.daily_purr_api.data.ReservationData;
+import com.dailypurr.daily_purr_api.models.Cat;
 import com.dailypurr.daily_purr_api.models.Reservations;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,11 @@ public class ReservationController {
     @GetMapping("")
     public Collection<Reservations> getAllReservations() {
         return ReservationData.getAll();
+    }
+
+    @GetMapping("/details/{reservationId}")
+    public Reservations getReservationById(@PathVariable int reservationId) {
+        return ReservationData.getById(reservationId);
     }
 
     @PostMapping("/add")
