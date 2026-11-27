@@ -2,7 +2,9 @@ package com.dailypurr.daily_purr_api.controllers;
 
 
 import com.dailypurr.daily_purr_api.data.AdoptionData;
+import com.dailypurr.daily_purr_api.data.CatData;
 import com.dailypurr.daily_purr_api.models.Adoption;
+import com.dailypurr.daily_purr_api.models.Cat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
@@ -15,6 +17,11 @@ public class AdoptionController {
     @GetMapping("")
     public Collection<Adoption> getAllAdoptions() {
         return AdoptionData.getAll();
+    }
+
+    @GetMapping("/details/{adoptionId}")
+    public Adoption getAdoptionById(@PathVariable int adoptionId) {
+        return AdoptionData.getById(adoptionId);
     }
 
     @PostMapping("/add")
