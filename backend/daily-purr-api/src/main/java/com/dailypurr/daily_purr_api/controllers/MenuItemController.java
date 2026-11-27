@@ -1,6 +1,8 @@
 package com.dailypurr.daily_purr_api.controllers;
 
+import com.dailypurr.daily_purr_api.data.CatData;
 import com.dailypurr.daily_purr_api.data.MenuItemData;
+import com.dailypurr.daily_purr_api.models.Cat;
 import com.dailypurr.daily_purr_api.models.MenuItems;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +17,11 @@ public class MenuItemController {
     @GetMapping("")
     public Collection<MenuItems> getAllMenuItems(){
         return MenuItemData.getAll();
+    }
+
+    @GetMapping("/details/{menuitemId}")
+    public MenuItems getMenuitemById(@PathVariable int menuitemId) {
+        return MenuItemData.getById(menuitemId);
     }
 
     @PostMapping("/add")
