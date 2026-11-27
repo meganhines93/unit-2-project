@@ -1,7 +1,9 @@
 package com.dailypurr.daily_purr_api.controllers;
 
 
+import com.dailypurr.daily_purr_api.data.CatData;
 import com.dailypurr.daily_purr_api.data.EventData;
+import com.dailypurr.daily_purr_api.models.Cat;
 import com.dailypurr.daily_purr_api.models.Event;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,11 @@ public class EventController {
     @GetMapping("")
     public Collection<Event> getAllEvents() {
         return EventData.getAll();
+    }
+
+    @GetMapping("/details/{eventId}")
+    public Event getEventById(@PathVariable int eventId) {
+        return EventData.getById(eventId);
     }
 
     @PostMapping("/add")
